@@ -46,4 +46,16 @@ fn main() {
         }]
         .to_vec(),
     });
+
+
+    println!("printing Skill Gems:");
+    for gem in skill_gems {
+        println!("{:#?}", gem);
+    }
+
+    println!("printing Skills:");
+    for skill in skills {
+        println!("{:#?}", skill);
+    }
+
 }
