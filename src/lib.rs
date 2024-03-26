@@ -1,5 +1,5 @@
-use combat::{CastType, DamageEffect, Effect, EffectType, Skill, SkillTargeting};
-use skillgems::{SkillGem, SkillMod};
+pub use combat::{CastType, DamageEffect, Effect, EffectType, Skill, SkillTargeting};
+pub use skillgems::{SkillGem, SkillMod};
 
 pub mod combat;
 pub mod items;
