@@ -5,7 +5,7 @@ pub mod combat;
 pub mod items;
 pub mod skillgems;
 
-fn main() {
+pub fn main() {
     let mut skills: Vec<Skill> = Vec::new();
     let mut skill_gems: Vec<SkillGem> = Vec::new();
 
