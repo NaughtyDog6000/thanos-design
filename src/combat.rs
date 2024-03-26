@@ -1,6 +1,9 @@
+use serde::{Deserialize, Serialize};
+
+
 // skills are something that the user actively "casts" or activates
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Skill {
     pub skill_id: u32,
     pub name: String,
@@ -14,7 +17,7 @@ pub struct Skill {
     pub effects: Vec<Effect>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize, Serialize)]
 pub enum SkillTargeting {
     Point {
         range: f32,
@@ -28,7 +31,7 @@ pub enum SkillTargeting {
     None, // press button to cast / targets self
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize, Serialize)]
 pub enum CastType {
     Instant,
     Charge {
@@ -38,7 +41,7 @@ pub enum CastType {
     // Toggle, //debateable if should be included
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub enum EffectType {
     Damage(DamageEffect), //damage types and stats
     DOT(DamageOverTimeEffect),
@@ -47,13 +50,13 @@ pub enum EffectType {
     Movement(MovementEffect), // teleports the player or dashes to a position etc
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct Effect {
     pub area_of_effect: Option<f32>, // for AOE / spash damage Effects
     pub varaint: EffectType,
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct DamageEffect {
     pub true_damage: u32, // damage that ignores all resistances
     pub melee_damage: u32,
@@ -61,10 +64,10 @@ pub struct DamageEffect {
     pub magic_damage: u32,
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct HealEffect {}
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct MovementEffect {
     pub target_position: (f32, f32, f32), // where to move towards
     pub movement_duration: f32,           // how long to go from A->B (could be changed to speed)
@@ -72,14 +75,14 @@ pub struct MovementEffect {
     pub can_travel_unwalkable: bool, // if the path can go over an otherwise un-walkable surface (void/dashing over lava)
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct DamageOverTimeEffect {
     pub damage_type: DamageOverTimeType,
     pub duration: f32,
     pub damage_per_tick: u32,
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub enum DamageOverTimeType {
     Poison,
     Burn,
