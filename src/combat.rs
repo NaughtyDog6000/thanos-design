@@ -3,7 +3,7 @@ use bson::oid::ObjectId;
 
 // skills are something that the user actively "casts" or activates
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Skill {
     #[serde(rename = "_id")]
     pub skill_id: ObjectId,
@@ -18,7 +18,7 @@ pub struct Skill {
     pub effects: Vec<Effect>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
 pub enum SkillTargeting {
     Point {
         range: f32,
@@ -32,7 +32,7 @@ pub enum SkillTargeting {
     None, // press button to cast / targets self
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub enum CastType {
     Instant,
     Charge {
