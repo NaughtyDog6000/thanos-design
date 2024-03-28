@@ -70,7 +70,7 @@ pub struct HealEffect {}
 
 #[derive(Clone, Copy, Debug, Deserialize, Serialize)]
 pub struct MovementEffect {
-    pub target_position: (f32, f32, f32), // where to move towards
+    pub movement_distance: f32, // where to move towards
     pub movement_duration: f32,           // how long to go from A->B (could be changed to speed)
     pub untargetable: bool, // if the user should be untargetable during this (dodge roll from darksouls)
     pub can_travel_unwalkable: bool, // if the path can go over an otherwise un-walkable surface (void/dashing over lava)
