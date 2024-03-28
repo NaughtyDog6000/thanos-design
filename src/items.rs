@@ -1,3 +1,4 @@
+use bson::oid::ObjectId;
 use serde::{Deserialize, Serialize};
 
 // General Item Properties:
@@ -6,7 +7,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Equipment {
-    pub item_id: u32,          // unique identifier of each item
+    #[serde(rename = "_id")]
+    pub item_id: ObjectId,          // unique identifier of each item
     pub item_instance_id: u32, // unique identifier of each instance of an item, used to be able to track and revert items that may have been duped
 
     pub durability: u32,

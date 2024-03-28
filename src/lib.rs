@@ -1,3 +1,4 @@
+use bson::oid::ObjectId;
 pub use combat::{CastType, DamageEffect, Effect, EffectType, Skill, SkillTargeting};
 pub use skillgems::{SkillGem, SkillMod};
 
@@ -10,7 +11,7 @@ pub fn main() {
     let mut skill_gems: Vec<SkillGem> = Vec::new();
 
     skills.push(Skill {
-        skill_id: 0,
+        skill_id: ObjectId::new(),
         name: "fireball".to_string(),
         description: "strike an area with a fireball doing {DAMAGE} damage.".to_string(),
         cooldown: 12.0,
@@ -65,7 +66,7 @@ pub fn example_skills() -> Vec<Skill> {
 
 
     skills.push(Skill {
-        skill_id: 0,
+        skill_id: ObjectId::new(),
         name: "fireball".to_string(),
         description: "strike an area with a fireball doing {DAMAGE} damage.".to_string(),
         cooldown: 12.0,

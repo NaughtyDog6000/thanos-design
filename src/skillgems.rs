@@ -10,7 +10,8 @@ pub struct SkillMod {
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct SkillGem {
-    pub item_id: u32,
+    #[serde(rename = "_id")]
+    pub item_id: ObjectId,
     pub skill_id: u32,
     pub mods: Vec<SkillMod>,
 }

@@ -1,11 +1,12 @@
 use serde::{Deserialize, Serialize};
-
+use bson::oid::ObjectId;
 
 // skills are something that the user actively "casts" or activates
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Skill {
-    pub skill_id: u32,
+    #[serde(rename = "_id")]
+    pub skill_id: ObjectId,
     pub name: String,
     pub description: String,
     pub cooldown: f32, // seconds
