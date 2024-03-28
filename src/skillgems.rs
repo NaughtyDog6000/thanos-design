@@ -1,4 +1,5 @@
 use std::collections::HashSet;
+use bson::oid::ObjectId;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -12,14 +13,14 @@ pub struct SkillMod {
 pub struct SkillGem {
     #[serde(rename = "_id")]
     pub item_id: ObjectId,
-    pub skill_id: u32,
+    pub skill_id: ObjectId,
     pub mods: Vec<SkillMod>,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct RawSkillGem {
-    pub item_id: u32,
-    pub skill_id: u32,
+    pub item_id: ObjectId,
+    pub skill_id: ObjectId,
     pub compatable_reagents: Vec<Reagent>,
 }
 

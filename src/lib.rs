@@ -39,8 +39,8 @@ pub fn main() {
     });
 
     skill_gems.push(SkillGem {
-        skill_id: 0,
-        item_id: 0,
+        skill_id: skills.first().unwrap().skill_id,
+        item_id: ObjectId::new(),
         mods: [SkillMod {
             title: "Ignite".to_string(),
             description: "Burns targets for extra damage over time".to_string(),
