@@ -103,8 +103,8 @@ pub fn example_skillgems() -> Vec<SkillGem> {
 
 
     skillgems.push(SkillGem {
-        skill_id: 0,
-        item_id: 0,
+        skill_id: ObjectId::new(),
+        item_id: ObjectId::new(),
         mods: [SkillMod {
             title: "Ignite".to_string(),
             description: "Burns targets for extra damage over time".to_string(),
