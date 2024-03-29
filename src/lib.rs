@@ -23,7 +23,7 @@ pub fn main() {
         effects: [
             Effect {
                 area_of_effect: Some(2.0),
-                varaint: EffectType::Damage(DamageEffect {
+                variant: EffectType::Damage(DamageEffect {
                     true_damage: 0,
                     melee_damage: 0,
                     ranged_damage: 0,
@@ -32,7 +32,7 @@ pub fn main() {
             },
             Effect {
                 area_of_effect: None,
-                varaint: EffectType::BufDebuf,
+                variant: EffectType::BufDebuf,
             },
         ]
         .to_vec(),
@@ -78,7 +78,7 @@ pub fn example_skills() -> Vec<Skill> {
         effects: [
             Effect {
                 area_of_effect: Some(2.0),
-                varaint: EffectType::Damage(DamageEffect {
+                variant: EffectType::Damage(DamageEffect {
                     true_damage: 0,
                     melee_damage: 0,
                     ranged_damage: 0,
@@ -87,7 +87,7 @@ pub fn example_skills() -> Vec<Skill> {
             },
             Effect {
                 area_of_effect: None,
-                varaint: EffectType::BufDebuf,
+                variant: EffectType::BufDebuf,
             },
         ]
         .to_vec(),
